@@ -3,3 +3,11 @@
     height: 100vh;
 }
 
+.about-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    padding: 50px;
+}
