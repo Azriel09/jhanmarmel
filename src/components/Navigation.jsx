@@ -35,22 +35,22 @@ export default function Navigation({
       >
         <div className="link-container">
           <a onClick={() => scrollToSection(hero)} className="nav-link">
-            HOME
+            Home
           </a>
         </div>
         <div className="link-container">
           <a onClick={() => scrollToSection(about)} className="nav-link">
-            ABOUT
+            About
           </a>
         </div>
         <div className="link-container">
           <a onClick={() => scrollToSection(projects)} className="nav-link">
-            PROJECTS
+            Project
           </a>
         </div>
         <div className="link-container">
           <a onClick={() => scrollToSection(contacts)} className="nav-link">
-            CONTACTS
+            Contact
           </a>
         </div>
       </div>
