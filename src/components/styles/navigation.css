@@ -30,7 +30,7 @@
     transition: 0.3s;
 }
 .link-container:nth-child(4n) {
-    padding-right: 50px;
+    padding-right: 30px;
 }
 .link-container:hover{
     
@@ -41,7 +41,7 @@
 }
 .nav-link {
     padding: 15px;
-    font-size: 15px;
+    font-size: 19px;
     font-weight: 500;
     letter-spacing: 1px;
     font-family: "Montserrat", sans-serif;
