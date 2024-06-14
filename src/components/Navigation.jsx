@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 import "./styles/navigation.css";
 import Hero from "./Hero";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 export default function Navigation({
   hero,
   projects,
@@ -9,20 +9,30 @@ export default function Navigation({
   contacts,
   scrollToSection,
 }) {
+  const navigation = useRef(null);
   const [isSticky, setIsSticky] = useState(false);
   const handleScroll = () => {
     const navContainer = document.getElementById("nav-container");
     const origPost = navContainer.getBoundingClientRect();
-    setIsSticky(origPost.top <= 0);
-    setIsSticky(origPost.bottom <= 40);
+
+    if (origPost.top <= 0) {
+      setIsSticky(true);
+    } else {
+      setIsSticky(false);
+    }
   };
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return;
   }, []);
+
   return (
     <div id="nav-container">
-      <div className={isSticky ? "sticky" : "notSticky"} id="navbar">
+      <div
+        className={isSticky ? "sticky" : "notSticky"}
+        id="navbar"
+        ref={navigation}
+      >
         <div className="link-container">
           <a onClick={() => scrollToSection(hero)} className="nav-link">
             HOME
