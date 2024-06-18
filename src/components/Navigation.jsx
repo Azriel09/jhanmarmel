@@ -45,7 +45,7 @@ export default function Navigation({
         </div>
         <div className="link-container">
           <a onClick={() => scrollToSection(projects)} className="nav-link">
-            Project
+            Projects
           </a>
         </div>
         <div className="link-container">

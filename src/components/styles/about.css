@@ -11,3 +11,10 @@
     gap: 100px;
     padding: 50px;
 }
+
+.about-me {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

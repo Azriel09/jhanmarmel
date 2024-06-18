@@ -4,8 +4,9 @@ import Navigation from "./Navigation";
 import About from "./About";
 import Contact from "./Contacts";
 import Projects from "./Projects";
-
+import { useSectionState } from "../context/section_context";
 export default function HomeContainer() {
+  const { currentSection, setCurrentSection } = useSectionState();
   const hero = useRef(null);
   const projects = useRef(null);
   const about = useRef(null);
