@@ -1,6 +1,7 @@
 import "./styles/navigation.css";
 import { useState, useEffect, useRef } from "react";
 import { useSectionState } from "../context/section_context";
+import useDetectScroll from "@smakss/react-scroll-direction";
 export default function Navigation({
   hero,
   projects,
@@ -11,10 +12,12 @@ export default function Navigation({
   const navigation = useRef(null);
   const [isSticky, setIsSticky] = useState(false);
   const { currentSection } = useSectionState();
+  const { scrollDir } = useDetectScroll();
+  const viewportWidth = window.innerWidth;
+
   const handleScroll = () => {
     const navContainer = document.getElementById("nav-container");
     const origPost = navContainer.getBoundingClientRect();
-
     if (origPost.top <= 0) {
       setIsSticky(true);
     } else {
@@ -23,13 +26,18 @@ export default function Navigation({
   };
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
+
     return;
-  }, []);
+  }, [scrollDir]);
 
   return (
     <div id="nav-container">
       <div
-        className={isSticky ? "sticky" : "notSticky"}
+        className={
+          (isSticky && viewportWidth > 600) || (isSticky && scrollDir == "up")
+            ? "sticky"
+            : "notSticky"
+        }
         id="navbar"
         ref={navigation}
       >

@@ -1,7 +1,5 @@
-import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
-import Navigation from "./components/Navigation";
 import Home from "./pages/Home";
 import HomeContainer from "./components/Home_container";
 import { SectionProvider } from "./context/section_context";

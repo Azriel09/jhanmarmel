@@ -9,8 +9,8 @@ import { useElementDetector } from "use-detector-hook";
 export default function HomeContainer() {
   const { setCurrentSection } = useSectionState();
   const hero = useRef(null);
-  const projects = useRef(null);
   const about = useRef(null);
+  const projects = useRef(null);
   const contacts = useRef(null);
 
   const scrollToSection = (elementRef) => {

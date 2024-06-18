@@ -1,6 +1,6 @@
 .hero {
     display: flex;
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
     flex-direction: column;
     align-items: center;
@@ -14,7 +14,7 @@
     text-align: center;
     font-family: "Montserrat", sans-serif;
     font-weight: 300;
-    font-size: 6vh;
+    font-size: 5vh;
    }
 
 .name {
@@ -22,10 +22,10 @@
 }
 
 .line1 {
-    animation: slideText1 0.2s ease-in;
+    animation: slideText1 0.4s ease-in;
 }
 .line2 {
-    animation: slideText2 0.2s ease-in;
+    animation: slideText2 0.4s ease-in;
 }
 
 .line3 {
@@ -34,7 +34,7 @@
     border: 2px solid #ff4d5a;
     color: #ff4d5a;
     transition: 0.3s;
-    animation: slideText3 0.2s ease-in;
+    animation: slideText3 0.4s ease-in;
 }
 .line3:hover{
     transform: scale(1.1);
