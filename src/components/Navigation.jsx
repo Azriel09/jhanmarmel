@@ -1,6 +1,4 @@
-import { Outlet } from "react-router-dom";
 import "./styles/navigation.css";
-import Hero from "./Hero";
 import { useState, useEffect, useRef } from "react";
 import { useSectionState } from "../context/section_context";
 export default function Navigation({
