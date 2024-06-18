@@ -39,7 +39,7 @@
 .link-container:hover{
     
     cursor: pointer;
-    color: #ff4d5a;
+    
   
 
 }
@@ -50,5 +50,9 @@
     letter-spacing: 1px;
     font-family: "Montserrat", sans-serif;
 
+}
+
+.highlight {
+    color: #ff4d5a;
 }
 
