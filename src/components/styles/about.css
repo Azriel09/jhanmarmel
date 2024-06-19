@@ -6,9 +6,9 @@
 .about-content {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
-    gap: 100px;
+    gap: 50px;
     padding: 25px;
 }
 .profile-icon {
@@ -22,14 +22,15 @@
     justify-content: center;
     align-items: center;
     width: 50%;
+    padding: 100px;
 }
 
 .about-skills {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
-    gap: 50px
+    justify-content: space-between;
+    width: 50%;
 }
 .skill-column {
     display: flex;
@@ -47,7 +48,7 @@
     gap: 3px;
     padding: 10px 20px;
     position: relative;
-    width: 120px;
+    max-width: 50%;
     height: 80px;
 }
 .skill-container::before{
@@ -66,11 +67,11 @@
 }
 
 .skill-icon {
-    width: 50px;
+    max-width: 3rem;
 }
 
 .skill-name {
-    font-size: 12px;
+    font-size: 0.6rem;
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
     line-height: 1;
@@ -78,8 +79,18 @@
     color: #fafafa
     
 }
-@media only screen and (min-width: 650px) {
+
+
+@media only screen and (min-width: 430px) {
+    .about-skills {
+        gap: 50px;
+        justify-content: center;
+    }
+}
+
+@media only screen and (min-width: 750px) {
     .about-content {
         flex-direction: row;
+        justify-content: space-around;
     }
 }
