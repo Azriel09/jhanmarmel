@@ -9,9 +9,20 @@ import NodeJSPNG from "../assets/nodejs.png";
 import SassPNG from "../assets/sass.png";
 import ReactPNG from "../assets/react.png";
 import MuiPNG from "../assets/mui.png";
-import AWSPNG from "../assets/aws.png";
+import AwsPNG from "../assets/aws.png";
 import GitPNG from "../assets/git.png";
 export default function About({ about }) {
+  const skillsObj = {
+    first: [HtmlPNG, CssPNG, GitPNG],
+    first_names: ["HTML", "CSS", "GIT"],
+    first_altNames: ["html", "css", "git"],
+    second: [JavascriptPNG, ReactPNG, AwsPNG, MongoDBPNG],
+    second_names: ["JAVASCRIPT", "REACT", "AWS", "MONGODB"],
+    second_altNames: ["javascript", "react", "aws", "mongodb"],
+    third: [NodeJSPNG, SassPNG, MuiPNG],
+    third_names: ["NODE.JS", "SASS", "MUI"],
+    third_altNames: ["nodejs", "sass", "mui"],
+  };
   return (
     <div className="about page">
       <h2 className="page-header">About</h2>
@@ -30,54 +41,52 @@ export default function About({ about }) {
         </div>
         <div className="about-skills">
           <div className="1st skill-column">
-            <div className="skill-container">
-              <img src={HtmlPNG} alt="html-icon" className="skill-icon" />
-              <div className="skill-name">HTML</div>
-            </div>
-            <div className="skill-container">
-              <img src={CssPNG} alt="css-icon" className="skill-icon" />
-              <div className="skill-name">CSS</div>
-            </div>
-            <div className="skill-container">
-              <img src={GitPNG} alt="git-icon" className="skill-icon" />
-              <div className="skill-name">GIT</div>
-            </div>
+            {skillsObj["first"].map((png, i) => {
+              return (
+                <div className="skill-container" key={i}>
+                  <img
+                    src={png}
+                    alt={`${skillsObj["first_altNames"][i]}-icon`}
+                    className="skill-icon"
+                  />
+                  <div className="skill-name">
+                    {skillsObj["first_names"][i]}
+                  </div>
+                </div>
+              );
+            })}
           </div>
           <div className="2nd skill-column">
-            <div className="skill-container">
-              <img
-                src={JavascriptPNG}
-                alt="javascript-icon"
-                className="skill-icon"
-              />
-              <div className="skill-name">JAVASCRIPT</div>
-            </div>
-            <div className="skill-container">
-              <img src={ReactPNG} alt="react-icon" className="skill-icon" />
-              <div className="skill-name">REACT</div>
-            </div>
-            <div className="skill-container">
-              <img src={AWSPNG} alt="aws-icon" className="skill-icon" />
-              <div className="skill-name">AWS</div>
-            </div>
-            <div className="skill-container">
-              <img src={MongoDBPNG} alt="mongodb-icon" className="skill-icon" />
-              <div className="skill-name">MONGODB</div>
-            </div>
+            {skillsObj["second"].map((png, i) => {
+              return (
+                <div className="skill-container" key={i}>
+                  <img
+                    src={png}
+                    alt={`${skillsObj["second_altNames"][i]}-icon`}
+                    className="skill-icon"
+                  />
+                  <div className="skill-name">
+                    {skillsObj["second_names"][i]}
+                  </div>
+                </div>
+              );
+            })}
           </div>
           <div className="3rd skill-column">
-            <div className="skill-container">
-              <img src={NodeJSPNG} alt="nodejs-icon" className="skill-icon" />
-              <div className="skill-name">NODE.JS</div>
-            </div>
-            <div className="skill-container">
-              <img src={SassPNG} alt="sass-icon" className="skill-icon" />
-              <div className="skill-name">SASS</div>
-            </div>
-            <div className="skill-container">
-              <img src={MuiPNG} alt="mui-icon" className="skill-icon" />
-              <div className="skill-name">MUI</div>
-            </div>
+            {skillsObj["third"].map((png, i) => {
+              return (
+                <div className="skill-container" key={i}>
+                  <img
+                    src={png}
+                    alt={`${skillsObj["third_altNames"][i]}-icon`}
+                    className="skill-icon"
+                  />
+                  <div className="skill-name">
+                    {skillsObj["third_names"][i]}
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
